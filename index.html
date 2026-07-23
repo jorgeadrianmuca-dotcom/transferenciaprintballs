@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>Catálogo de Pokéballs</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .wrapper { width: 100%; max-width: 480px; position: relative; }
+
+    .card-base {
+      background-color: #ffffff;
+      padding: 35px 28px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.12);
+      border: 1px solid #fee2e2;
+      width: 100%;
+      text-align: center;
+    }
+
+    .subtitulo-principal {
+      font-size: 1.1rem;
+      color: #dc2626;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -0.2px;
+    }
+
+    .contenedor-tarjetas {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #dc2626;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    }
+
+    .tarjeta {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 16px;
+      text-align: left;
+    }
+
+    .tarjeta:last-child { border-bottom: none; }
+
+    .etiqueta {
+      font-size: 0.68rem;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .valor {
+      font-size: 0.92rem;
+      color: #0f172a;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .btn-copiar {
+      width: 100%;
+      background-color: #dc2626;
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+    }
+
+    .btn-copiar:hover {
+      background-color: #b91c1c;
+      transform: translateY(-2px);
+    }
+
+    .mensaje {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      color: #ffffff;
+      background-color: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(4px);
+      padding: 18px 28px;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- TARJETA ÚNICA DIRECTA SIN CAMBIO DE PÁGINA -->
+    <div class="card-base">
+      <p class="subtitulo-principal">Poké Ball Estándar</p>
+
+      <div class="logo-detalle" style="margin-bottom: 16px;">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Poké Ball" class="logo-img" style="max-height: 80px; image-rendering: -webkit-optimize-contrast;">
+      </div>
+
+      <div class="contenedor-tarjetas">
+        <div class="tarjeta"><span class="etiqueta">Modelo:</span><span class="valor">Poké Ball Estándar</span></div>
+        <div class="tarjeta"><span class="etiqueta">Ratio de Captura:</span><span class="valor">1x</span></div>
+        <div class="tarjeta"><span class="etiqueta">Especialidad:</span><span class="valor">Uso general para Pokémon salvajes comunes</span></div>
+        <div class="tarjeta"><span class="etiqueta">Región de Origen:</span><span class="valor">Kanto / Todas</span></div>
+        <div class="tarjeta"><span class="etiqueta">Precio Tienda:</span><span class="valor">$200 ₽</span></div>
+      </div>
+
+      <button class="btn-copiar" onclick="copiarDatos()">Copiar especificaciones</button>
+    </div>
+  </div>
+
+  <div id="mensaje-flotante" class="mensaje">✓ Especificaciones copiadas</div>
+
+  <script>
+    function copiarDatos() {
+      const textoLimpio = "Poké Ball Estándar\nRatio: 1x\nEspecialidad: Uso general para Pokémon salvajes comunes\nRegión: Kanto / Todas\nPrecio: $200 ₽";
+
+      if (navigator.vibrate) navigator.vibrate(40);
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textoLimpio).then(mostrarMensajeExito);
+      } else {
+        const aux = document.createElement("textarea");
+        aux.value = textoLimpio;
+        document.body.appendChild(aux);
+        aux.select();
+        try { document.execCommand("copy"); mostrarMensajeExito(); } catch(e) {}
+        document.body.removeChild(aux);
+      }
+    }
+
+    function mostrarMensajeExito() {
+      const msj = document.getElementById("mensaje-flotante");
+      if (msj) {
+        msj.style.display = "block";
+        setTimeout(() => msj.style.display = "none", 2200);
+      }
+    }
+  </script>
+
+</body>
+</html>
