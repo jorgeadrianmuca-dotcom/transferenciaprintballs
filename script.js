@@ -1,5 +1,5 @@
 function copiarDatos() {
-  const textoLimpio = "Poké Ball Estándar\nRatio: 1x\nEspecialidad: Uso general para Pokémon salvajes comunes\nRegión: Kanto / Todas\nPrecio: $200 ₽";
+  const textoLimpio = "Print Balls\nRUT: 18.145.926-3\nBanco Santander\nCuenta Corriente\nN°: 4406124110535770\nPrint.balls@gmail.com";
 
   if (navigator.vibrate) navigator.vibrate(40);
 
@@ -20,3 +20,5 @@ function mostrarMensajeExito() {
   if (msj) {
     msj.style.display = "block";
     setTimeout(() => msj.style.display = "none", 2200);
+  }
+}
