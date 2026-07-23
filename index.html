@@ -17,13 +17,13 @@
     body {
       font-family: 'Press Start 2P', monospace;
       background-color: #ffccd5;
-      /* Ajustamos los tamaños proporcionales y el espacio exacto para que ambos sprites fluyan ordenados en diagonal */
+      /* Separamos las filas verticalmente para que una capa sea solo de Pokéballs y la otra solo de Pikachu por filas alternadas */
       background-image: 
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"),
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png");
       background-size: 40px 40px, 45px 45px;
-      background-position: 0 0, 50px 50px;
-      background-repeat: repeat, repeat;
+      background-position: 0 0, 0 80px;
+      background-repeat: repeat-x, repeat;
       color: #000000;
       display: flex;
       justify-content: center;
@@ -173,6 +173,6 @@
 
   <div id="mensaje-flotante" class="mensaje">¡Datos copiados!</div>
 
-  <script src="script.js?v=21"></script>
+  <script src="script.js?v=22"></script>
 </body>
 </html>
