@@ -16,14 +16,11 @@
 
     body {
       font-family: 'Press Start 2P', monospace;
+      /* Fondo rosado con patrón exclusivo de Pokéballs repetidas limpiamente */
       background-color: #ffccd5;
-      /* Separamos las filas verticalmente para que una capa sea solo de Pokéballs y la otra solo de Pikachu por filas alternadas */
-      background-image: 
-        url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"),
-        url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png");
-      background-size: 40px 40px, 45px 45px;
-      background-position: 0 0, 0 80px;
-      background-repeat: repeat-x, repeat;
+      background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png");
+      background-size: 50px 50px;
+      background-repeat: repeat;
       color: #000000;
       display: flex;
       justify-content: center;
@@ -47,22 +44,9 @@
       background-color: #ffffff;
       border: 4px solid #000000;
       padding: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       text-transform: uppercase;
       box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8);
-    }
-
-    .logo-contenedor {
-      margin-bottom: 20px;
-    }
-
-    .logo-img {
-      max-height: 64px;
-      width: auto;
-      object-fit: contain;
-      image-rendering: pixelated;
-      image-rendering: crisp-edges;
-      filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5));
     }
 
     .contenedor-tarjetas {
@@ -153,10 +137,6 @@
   <div class="wrapper">
     <div class="subtitulo-principal">Print Balls</div>
 
-    <div class="logo-contenedor">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Print Balls" class="logo-img">
-    </div>
-
     <div class="contenedor-tarjetas">
       <div class="tarjeta"><span class="etiqueta">Titular / Razón Social:</span><span class="valor">Print Balls</span></div>
       <div class="tarjeta"><span class="etiqueta">RUT:</span><span class="valor">18.145.926-3</span></div>
@@ -173,6 +153,6 @@
 
   <div id="mensaje-flotante" class="mensaje">¡Datos copiados!</div>
 
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=23"></script>
 </body>
 </html>
