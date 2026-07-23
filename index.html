@@ -23,7 +23,6 @@
       background-size: 55px 55px, 55px 55px;
       background-position: 0 0, 28px 28px;
       background-repeat: repeat, repeat;
-      opacity: 1;
       color: #1e293b;
       display: flex;
       justify-content: center;
@@ -41,13 +40,13 @@
     }
 
     .card-base {
-      background-color: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.75); /* Transparencia más abierta */
+      backdrop-filter: blur(12px);                  /* Desenfoque para resaltar el contenido */
+      -webkit-backdrop-filter: blur(12px);          /* Compatibilidad con iOS/Safari */
       padding: 35px 28px;
       border-radius: 24px;
-      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.25);
-      border: 2px solid rgba(254, 226, 226, 0.8);
+      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.6);
       width: 100%;
       text-align: center;
       position: relative;
@@ -90,17 +89,17 @@
       flex-direction: column;
       margin-bottom: 22px;
       margin-top: 10px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid rgba(226, 232, 240, 0.6);
       border-left: 4px solid #dc2626;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+      background-color: rgba(255, 255, 255, 0.5); /* Contenedor interno translúcido */
       text-align: left;
     }
 
     .tarjeta {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid #e2e8f0;
+      background-color: transparent; /* Fondo completamente transparente para ver las Pokéballs */
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
       padding: 12px 18px;
       display: flex;
       flex-direction: column;
