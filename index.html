@@ -34,40 +34,20 @@
 
     .wrapper { 
       width: 100%; 
-      max-width: 480px; 
+      max-width: 440px; 
       position: relative; 
       z-index: 2; 
-    }
-
-    .card-base {
-      background-color: rgba(255, 255, 255, 0.4) !important; /* Transparencia real dejando pasar el patrón */
-      padding: 35px 28px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      border: 2px solid rgba(255, 255, 255, 0.8);
-      width: 100%;
       text-align: center;
-      position: relative;
     }
 
-    .card-base::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
-      border-top-left-radius: 24px;
-      border-top-right-radius: 24px;
-    }
-
+    /* Ya no hay tarjeta grande, el título y logo flotan directos sobre el fondo */
     .subtitulo-principal {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       color: #b91c1c;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       letter-spacing: -0.3px;
+      text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
     }
 
     .logo-contenedor {
@@ -79,26 +59,27 @@
       width: auto;
       object-fit: contain;
       image-rendering: -webkit-optimize-contrast;
-      filter: drop-shadow(0 4px 6px rgba(220, 38, 38, 0.15));
+      filter: drop-shadow(0 4px 6px rgba(220, 38, 38, 0.2));
     }
 
+    /* Caja de datos con color sólido (blanco puro) */
     .contenedor-tarjetas {
       display: flex;
       flex-direction: column;
       margin-bottom: 22px;
-      margin-top: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-left: 4px solid #dc2626;
-      border-radius: 12px;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid #dc2626;
+      border-radius: 16px;
       overflow: hidden;
-      background-color: rgba(255, 255, 255, 0.3) !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
       text-align: left;
     }
 
     .tarjeta {
-      background-color: transparent !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 12px 18px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #f1f5f9;
+      padding: 14px 18px;
       display: flex;
       flex-direction: column;
     }
@@ -107,7 +88,7 @@
 
     .etiqueta {
       font-size: 0.7rem;
-      color: #475569;
+      color: #64748b;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -115,7 +96,7 @@
     }
 
     .valor {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: #0f172a;
       font-weight: 600;
       word-break: break-all;
@@ -126,9 +107,9 @@
       background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
       color: #ffffff;
       border: none;
-      padding: 15px;
+      padding: 16px;
       border-radius: 14px;
-      font-size: 0.98rem;
+      font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -166,28 +147,26 @@
 <body>
 
   <div class="wrapper">
-    <div class="card-base">
-      <p class="subtitulo-principal">Print Balls</p>
+    <p class="subtitulo-principal">Print Balls</p>
 
-      <div class="logo-contenedor">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Print Balls" class="logo-img">
-      </div>
-
-      <div class="contenedor-tarjetas">
-        <div class="tarjeta"><span class="etiqueta">Titular / Razón Social:</span><span class="valor">Print Balls</span></div>
-        <div class="tarjeta"><span class="etiqueta">RUT:</span><span class="valor">18.145.926-3</span></div>
-        <div class="tarjeta"><span class="etiqueta">Banco:</span><span class="valor">Banco Santander</span></div>
-        <div class="tarjeta"><span class="etiqueta">Tipo de Cuenta:</span><span class="valor">Cuenta Corriente</span></div>
-        <div class="tarjeta"><span class="etiqueta">Número de Cuenta:</span><span class="valor">4406124110535770</span></div>
-        <div class="tarjeta"><span class="etiqueta">Correo:</span><span class="valor">Print.balls@gmail.com</span></div>
-      </div>
-
-      <button class="btn-copiar" onclick="copiarDatos()">Copiar datos de transferencia</button>
+    <div class="logo-contenedor">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Print Balls" class="logo-img">
     </div>
+
+    <div class="contenedor-tarjetas">
+      <div class="tarjeta"><span class="etiqueta">Titular / Razón Social:</span><span class="valor">Print Balls</span></div>
+      <div class="tarjeta"><span class="etiqueta">RUT:</span><span class="valor">18.145.926-3</span></div>
+      <div class="tarjeta"><span class="etiqueta">Banco:</span><span class="valor">Banco Santander</span></div>
+      <div class="tarjeta"><span class="etiqueta">Tipo de Cuenta:</span><span class="valor">Cuenta Corriente</span></div>
+      <div class="tarjeta"><span class="etiqueta">Número de Cuenta:</span><span class="valor">4406124110535770</span></div>
+      <div class="tarjeta"><span class="etiqueta">Correo:</span><span class="valor">Print.balls@gmail.com</span></div>
+    </div>
+
+    <button class="btn-copiar" onclick="copiarDatos()">Copiar datos de transferencia</button>
   </div>
 
   <div id="mensaje-flotante" class="mensaje">✓ Datos copiados al portapapeles</div>
 
-  <script src="script.js?v=12"></script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
