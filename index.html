@@ -16,7 +16,8 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      /* Fondo partido en dos estilo Pokéball: Rojo arriba, Blanco abajo */
+      background: linear-gradient(180deg, #dc2626 0%, #dc2626 50%, #f8fafc 50%, #f8fafc 100%);
       color: #1e293b;
       display: flex;
       justify-content: center;
@@ -24,31 +25,38 @@
       min-height: 100vh;
       padding: 20px;
       overflow-x: hidden;
+      position: relative;
     }
 
-    .wrapper { width: 100%; max-width: 480px; position: relative; }
+    /* Línea central negra que divide la Pokéball (Cinturón) */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 16px;
+      background-color: #0f172a;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .wrapper { 
+      width: 100%; 
+      max-width: 480px; 
+      position: relative; 
+      z-index: 2; 
+    }
 
     .card-base {
       background-color: #ffffff;
       padding: 35px 28px;
       border-radius: 24px;
-      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.12);
-      border: 2px solid #fecaca;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+      border: 4px solid #0f172a;
       width: 100%;
       text-align: center;
       position: relative;
-      overflow: hidden;
-    }
-
-    /* Franja superior estilo Pokéball */
-    .card-base::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
     }
 
     .subtitulo-principal {
@@ -61,6 +69,23 @@
 
     .logo-contenedor {
       margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Botón central de la Pokéball simulado detrás o bajo el logo */
+    .logo-contenedor::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border: 4px solid #0f172a;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .logo-img {
@@ -75,6 +100,7 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 22px;
+      margin-top: 10px;
       border: 1px solid #e2e8f0;
       border-left: 4px solid #dc2626;
       border-radius: 12px;
@@ -177,8 +203,5 @@
   <div id="mensaje-flotante" class="mensaje">✓ Datos copiados al portapapeles</div>
 
   <script src="script.js"></script>
-</body>
-</html>
-
 </body>
 </html>
