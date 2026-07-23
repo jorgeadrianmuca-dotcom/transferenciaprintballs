@@ -16,7 +16,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f1f5f9;
+      background-color: #ffffff;
       background-image: 
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"),
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png");
@@ -40,13 +40,11 @@
     }
 
     .card-base {
-      background-color: rgba(255, 255, 255, 0.10) !important; /* 90% de transparencia (10% de opacidad) */
-      backdrop-filter: blur(18px) !important;
-      -webkit-backdrop-filter: blur(18px) !important;
+      background-color: rgba(255, 255, 255, 0.4) !important; /* Transparencia real dejando pasar el patrón */
       padding: 35px 28px;
       border-radius: 24px;
-      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 2px solid rgba(255, 255, 255, 0.8);
       width: 100%;
       text-align: center;
       position: relative;
@@ -89,17 +87,17 @@
       flex-direction: column;
       margin-bottom: 22px;
       margin-top: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       border-left: 4px solid #dc2626;
       border-radius: 12px;
       overflow: hidden;
-      background-color: rgba(255, 255, 255, 0.05) !important;
+      background-color: rgba(255, 255, 255, 0.3) !important;
       text-align: left;
     }
 
     .tarjeta {
       background-color: transparent !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       padding: 12px 18px;
       display: flex;
       flex-direction: column;
@@ -109,7 +107,7 @@
 
     .etiqueta {
       font-size: 0.7rem;
-      color: #334155;
+      color: #475569;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -190,6 +188,6 @@
 
   <div id="mensaje-flotante" class="mensaje">✓ Datos copiados al portapapeles</div>
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
