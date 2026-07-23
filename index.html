@@ -16,14 +16,12 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      /* Fondo blanco/gris claro con un patrón repetido de Pokéballs sutiles */
-      background-color: #f8fafc;
-      background-image: radial-gradient(#cbd5e1 1px, transparent 1px), 
-                        url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png");
-      background-size: 24px 24px, 80px 80px;
-      background-position: 0 0, 0 0;
-      background-repeat: repeat, repeat;
-      background-blend-mode: overlay;
+      /* Fondo con patrón de Pokéballs más juntas */
+      background-color: #f1f5f9;
+      background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png");
+      background-size: 50px 50px;
+      background-repeat: repeat;
+      background-blend-mode: luminosity;
       opacity: 0.98;
       color: #1e293b;
       display: flex;
@@ -45,7 +43,7 @@
       background-color: #ffffff;
       padding: 35px 28px;
       border-radius: 24px;
-      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.15);
+      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.25);
       border: 2px solid #fee2e2;
       width: 100%;
       text-align: center;
@@ -190,6 +188,6 @@
 
   <div id="mensaje-flotante" class="mensaje">✓ Datos copiados al portapapeles</div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
