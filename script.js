@@ -1,5 +1,5 @@
 function copiarDatos() {
-  const textoLimpio = "Print Balls\nRUT: 18.145.926-3\nBanco Santander\nCuenta Corriente\nN°: 4406124110535770\nPrint.balls@gmail.com";
+  const textoLimpio = "Print Balls\n18.145.926-3\nBanco Santander\nCuenta Corriente\n4406124110535770\nPrint.balls@gmail.com";
 
   if (navigator.vibrate) navigator.vibrate(40);
 
@@ -16,13 +16,13 @@ function copiarDatos() {
 function copiarAlternativo(texto) {
   const aux = document.createElement("textarea");
   aux.value = texto;
-  aux.style.position = "fixed";  // Previene scroll en móviles
+  aux.style.position = "fixed";
   document.body.appendChild(aux);
   aux.focus();
   aux.select();
   try {
-    constizado = document.execCommand("copy");
-    if (contizado) {
+    const copiado = document.execCommand("copy");
+    if (copiado) {
       mostrarMensajeExito();
     } else {
       alert("No se pudo copiar automáticamente. Selecciónalo manualmente.");
