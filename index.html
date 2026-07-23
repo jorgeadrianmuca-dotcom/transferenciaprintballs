@@ -17,12 +17,12 @@
     body {
       font-family: 'Press Start 2P', monospace;
       background-color: #ffccd5;
-      /* Definimos un espaciado de repetición amplio y controlado para que no se amontonen */
+      /* Ajustamos los tamaños proporcionales y el espacio exacto para que ambos sprites fluyan ordenados en diagonal */
       background-image: 
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"),
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png");
-      background-size: 48px 48px, 48px 48px;
-      background-position: 0 0, 96px 96px;
+      background-size: 40px 40px, 45px 45px;
+      background-position: 0 0, 50px 50px;
       background-repeat: repeat, repeat;
       color: #000000;
       display: flex;
@@ -173,6 +173,6 @@
 
   <div id="mensaje-flotante" class="mensaje">¡Datos copiados!</div>
 
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=21"></script>
 </body>
 </html>
