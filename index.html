@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-
-  <title>Datos de Transferencia - Print Balls</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
+<style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Poppins', sans-serif;
-      /* Fondo dinámico con múltiples capas de Pokéballs a color, más pequeñas, juntas y desordenadas en mosaico */
       background-color: #f1f5f9;
       background-image: 
         url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"),
@@ -42,11 +28,13 @@
     }
 
     .card-base {
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.88); /* Fondo blanco semitransparente */
+      backdrop-filter: blur(8px);                  /* Efecto blur para dejar ver el fondo */
+      -webkit-backdrop-filter: blur(8px);          /* Compatibilidad para celulares */
       padding: 35px 28px;
       border-radius: 24px;
       box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.25);
-      border: 2px solid #fee2e2;
+      border: 2px solid rgba(254, 226, 226, 0.8);
       width: 100%;
       text-align: center;
       position: relative;
@@ -164,32 +152,3 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
     }
   </style>
-</head>
-<body>
-
-  <div class="wrapper">
-    <div class="card-base">
-      <p class="subtitulo-principal">Print Balls</p>
-
-      <div class="logo-contenedor">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Print Balls" class="logo-img">
-      </div>
-
-      <div class="contenedor-tarjetas">
-        <div class="tarjeta"><span class="etiqueta">Titular / Razón Social:</span><span class="valor">Print Balls</span></div>
-        <div class="tarjeta"><span class="etiqueta">RUT:</span><span class="valor">18.145.926-3</span></div>
-        <div class="tarjeta"><span class="etiqueta">Banco:</span><span class="valor">Banco Santander</span></div>
-        <div class="tarjeta"><span class="etiqueta">Tipo de Cuenta:</span><span class="valor">Cuenta Corriente</span></div>
-        <div class="tarjeta"><span class="etiqueta">Número de Cuenta:</span><span class="valor">4406124110535770</span></div>
-        <div class="tarjeta"><span class="etiqueta">Correo:</span><span class="valor">Print.balls@gmail.com</span></div>
-      </div>
-
-      <button class="btn-copiar" onclick="copiarDatos()">Copiar datos de transferencia</button>
-    </div>
-  </div>
-
-  <div id="mensaje-flotante" class="mensaje">✓ Datos copiados al portapapeles</div>
-
-  <script src="script.js?v=5"></script>
-</body>
-</html>
