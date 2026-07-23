@@ -70,7 +70,6 @@
       margin-bottom: 25px;
       background-color: #ffffff;
       border: 4px solid #000000;
-      border-radius: 0px;
       overflow: hidden;
       box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
       text-align: left;
@@ -91,7 +90,6 @@
       font-size: 0.5rem;
       color: #555555;
       text-transform: uppercase;
-      letter-spacing: 0px;
     }
 
     .valor {
@@ -102,33 +100,33 @@
       line-height: 1.4;
     }
 
+    /* BOTÓN ESTILO MENÚ SELECCIONADO (NEGRO CON TEXTO BLANCO Y FLECHA) */
     .btn-copiar {
       width: 100%;
-      background-color: #ffffff;
+      background-color: #000000;
       font-family: 'Press Start 2P', monospace;
-      color: #000000;
+      color: #ffffff;
       border: 4px solid #000000;
       padding: 18px 16px;
-      border-radius: 0px;
-      font-size: 0.62rem;
+      font-size: 0.58rem;
       line-height: 1.6;
       text-transform: uppercase;
       cursor: pointer;
       position: relative;
-      box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8);
+      box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.5);
       transition: all 0.1s ease;
       text-align: center;
     }
 
     .btn-copiar:hover {
-      background-color: #f8fafc;
+      background-color: #222222;
       transform: translate(-2px, -2px);
-      box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.9);
+      box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6);
     }
 
     .btn-copiar:active {
       transform: translate(2px, 2px);
-      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.6);
     }
 
     .mensaje {
@@ -160,7 +158,7 @@
     </div>
 
     <div class="contenedor-tarjetas">
-      <div class="tarjeta"><span class="etiqueta">Razón Social:</span><span class="valor">Print Balls</span></div>
+      <div class="tarjeta"><span class="etiqueta">Titular / Razón Social:</span><span class="valor">Print Balls</span></div>
       <div class="tarjeta"><span class="etiqueta">RUT:</span><span class="valor">18.145.926-3</span></div>
       <div class="tarjeta"><span class="etiqueta">Banco:</span><span class="valor">Banco Santander</span></div>
       <div class="tarjeta"><span class="etiqueta">Tipo de Cuenta:</span><span class="valor">Cuenta Corriente</span></div>
@@ -169,12 +167,12 @@
     </div>
 
     <button class="btn-copiar" onclick="copiarDatos()">
-      Copiar datos de transferencia
+      ▶ Copiar datos
     </button>
   </div>
 
   <div id="mensaje-flotante" class="mensaje">¡Datos copiados!</div>
 
-  <script src="script.js?v=16"></script>
+  <script src="script.js?v=17"></script>
 </body>
 </html>
